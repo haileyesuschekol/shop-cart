@@ -103,7 +103,6 @@ let update = (id) => {
   document.getElementById(id).innerHTML = search.item
   calculation()
 }
-
 let calculation = () => {
   const cartAmount = basket.map((x) => x.item).reduce((x, y) => x + y, 0)
   document.getElementById("cart-amount").innerHTML = cartAmount
