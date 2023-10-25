@@ -1,6 +1,6 @@
 let shop = document.getElementById("shop")
 
-let basket = []
+let basket = JSON.parse(localStorage.getItem("data")) || []
 
 let shopItemsData = [
   {
@@ -37,6 +37,7 @@ let generateShop = () => {
   return (shop.innerHTML = shopItemsData
     .map((x) => {
       let { id, name, description, price, img } = x
+      let searching = basket.find((x) => x.id === id) || []
       return `
  <div class="item" product-id-${id}>
             <img width="220" src="${img}" alt="">
@@ -47,7 +48,9 @@ let generateShop = () => {
                     <h2>$${price}</h2>
                     <div class="btn">
                     <i onclick='decrement(${id})' class="bi bi-dash-lg"></i>
-                    <div id=${id} class="quantity">0</div>
+                    <div id=${id} class="quantity">
+                      ${searching.item === undefined ? 0 : searching.item}
+                    </div>
                     <i onclick='increment(${id})' class="bi bi-plus-lg"></i>
                     </div>
                 </div>
@@ -76,17 +79,21 @@ let increment = (id) => {
   }
 
   update(selectedItem.id)
+  localStorage.setItem("data", JSON.stringify(basket))
 }
 
 //decrement
 let decrement = (id) => {
   let selectedItem = id
   let search = basket.find((x) => x.id === selectedItem.id)
-
-  if (search.item === 0) return
-  else search.item -= 1
-
+  if (search === undefined) return
+  else if (search.item === 0) return
+  else {
+    search.item -= 1
+  }
   update(selectedItem.id)
+  basket = basket.filter((x) => x.item !== 0)
+  localStorage.setItem("data", JSON.stringify(basket))
 }
 
 //update
@@ -101,3 +108,5 @@ let calculation = () => {
   const cartAmount = basket.map((x) => x.item).reduce((x, y) => x + y, 0)
   document.getElementById("cart-amount").innerHTML = cartAmount
 }
+
+calculation()
