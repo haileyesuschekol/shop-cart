@@ -1,88 +1,88 @@
 let lable = document.getElementById("lable")
 let shoppingCart = document.getElementById("shopping-cart")
-shopItemsData = [
+let shopItemsData = [
   {
     id: "jfhgbvnscs",
-    name: "Casual Shirt",
+    name: "Shoe",
     price: 45,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "original comfort.",
     img: "images/img-1.jpg",
   },
   {
     id: "ioytrhndcv",
-    name: "Office Shirt",
-    price: 100,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    img: "images/img-2.jpg",
+    name: "Cap",
+    price: 30,
+    description: "stylish cap.",
+    img: "images/img-2.png",
   },
   {
     id: "wuefbncxbsn",
-    name: "T Shirt",
+    name: "Habesha Cap",
     price: 25,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    img: "images/img-3.jpg",
+    description: "Style plus comfort.",
+    img: "images/img-3.png",
   },
   {
     id: "thyfhcbcv",
-    name: "Mens Suit",
+    name: "Habesha Dress",
     price: 300,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    img: "images/img-4.jpg",
+    description: "Stylish dress.",
+    img: "images/img-4.png",
   },
   {
     id: "thiecbawdjksadjk",
-    name: "Mens Tie",
+    name: "Habesha Dress",
     price: 25,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "stylish Dress.",
     img: "images/img-5.png",
   },
   {
     id: "iuertrywebncdjksadjk",
-    name: "Casual shoes",
+    name: "Jawleries",
     price: 200,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "Beautiful Jawleries.",
     img: "images/img-6.png",
   },
   {
     id: "thierytbvcbvzdhadjk",
-    name: "black suit",
+    name: "Jawleries",
     price: 450,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "Beautiful Jawleries.",
     img: "images/img-7.png",
   },
   {
     id: "trfoiwfcnbcawdjksadjk",
-    name: "polo shirt",
+    name: "shirt",
     price: 45,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "Nice mens shirt.",
     img: "images/img-8.png",
   },
   {
     id: "cbvxbcvsceldk",
-    name: "denim shirt",
+    name: "Shirt",
     price: 85,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "Mens Shirt.",
     img: "images/img-9.png",
   },
   {
     id: "oiopijmjkhuihb",
-    name: "denim pants",
+    name: "Shirt",
     price: 120,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "Mens Black Shirt.",
     img: "images/img-10.png",
   },
   {
     id: "oiopijewyiohbjhib",
-    name: "basic cap",
+    name: "Cultural Shoe",
     price: 35,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "Beautiful Shoe.",
     img: "images/img-11.png",
   },
   {
     id: "rtytytuyuytyytbvncv",
-    name: "leather boots",
+    name: "Watch",
     price: 350,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "Nice Watch.",
     img: "images/img-12.png",
   },
 ]
@@ -105,7 +105,7 @@ let generateCartItem = () => {
         let { img, price, name } = search
         return `
         <div class = 'cart-item'> 
-            <img width = '100' src = ${img} alt =""/> 
+            <img width = '100' height = '90' src = ${img} alt =""/> 
             <div class = 'details'>
                 <div class = 'title-price-x'>
                     <h4 class = 'title-price'>
